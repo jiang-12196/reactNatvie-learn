@@ -6,7 +6,6 @@
 
 import React, { Component } from 'react';
 import {
-  AppRegistry,
   Image,
   FlatList,
   Platform,
@@ -16,10 +15,8 @@ import {
 } from 'react-native';
 
 const instructions = Platform.select({
-  ios: 'Press Cmd+R to reload,\n' +
-    'Cmd+D or shake for dev menu',
-  android: 'Double tap R on your keyboard to reload,\n' +
-    'Shake or press menu button for dev menu',
+  ios: 'IOS系统',
+  android: '安卓系统',
 });
 
 const REQUEST_URL = 'https://raw.githubusercontent.com/facebook/react-native/0.51-stable/docs/MoviesExample.json';
@@ -42,7 +39,6 @@ export default class App extends Component<Props> {
     fetch(REQUEST_URL)
     .then((response) => response.json())
     .then((data) => {
-      console.log('data---->', data);
       this.setState({
         data: this.state.data.concat(data.movies),
         loaded: true,
@@ -55,12 +51,15 @@ export default class App extends Component<Props> {
     }
 
     return (
-      <FlatList
-        data={this.state.data}
-        renderItem={this.renderMovie}
-        style={styles.list}
-        keyExtractor={(movie) => movie.id}
-      />
+      <View>
+        <Text>{instructions}</Text>
+        <FlatList
+          data={this.state.data}
+          renderItem={this.renderMovie}
+          style={styles.list}
+          keyExtractor={(movie) => movie.id}
+        />
+      </View>
     );
   }
   
