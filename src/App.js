@@ -1,6 +1,6 @@
 import { StackNavigator } from 'react-navigation';
-import Movie from './Movie';
 import Home from './Home'
+import Movie from './Movie';
 
 const App = StackNavigator({
   Home: {
