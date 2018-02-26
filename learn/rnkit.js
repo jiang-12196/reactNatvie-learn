@@ -5,7 +5,7 @@ import {
   QMRadio,
   QMList, // 列表
   QMSwitch,
-  QMInputItem， // 文本输入
+  QMInputItem, // 文本输入
   QMSwipeAction, // 左滑操作
   QMTabs,  // 标签页
   QMTab, // 小标签
@@ -122,10 +122,24 @@ const TabPane = QMTabs.TabPane;
   onChange={function}
 />
 
-Toast.success(content, duration, onClose, mask)  // 提示
-Toast.fail(content, duration, onClose, mask)
-Toast.info(content, duration, onClose, mask)
-Toast.loading(content, duration, onClose, mask)
-Toast.offline(content, duration, onClose, mask)
+QMToast.success(content, duration, onClose, mask)  // 提示
+QMToast.fail(content, duration, onClose, mask)
+QMToast.info(content, duration, onClose, mask)
+QMToast.loading(content, duration, onClose, mask)
+QMToast.offline(content, duration, onClose, mask)
 // conent 内容 duration 时间间隔 onClose 关闭后回调 mask 透明蒙层
+
+<QMDropDown>
+  <QMDropDownItem />
+</QMDropDown>
+
+<QMPicker
+>
+<List.Item />
+</QMPicker>
+
+<QMIcon name="jiahao"/>
+
+<QMForm.QMTextField />
+<QMText />
 
